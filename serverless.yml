@@ -1,0 +1,107 @@
+service: serverless-starter
+
+plugins:
+  - serverless-offline
+  - serverless-prune-plugin
+  # - serverless-domain-manager
+  - serverless-webpack
+  - serverless-s3-sync
+
+custom:
+  stage: ${opt:stage, 'local'}
+  region: ${opt:region, 'eu-west-1'}
+  baseDomain: my-app.com
+  domain:
+    production: api.${self:custom.baseDomain}
+    default: api-${self:custom.stage}.${self:custom.baseDomain}
+  # customDomain:
+  #   domainName: ${self:custom.domain.${self:custom.stage}, self:custom.domain.default}
+  #   stage: ${self:custom.stage}
+  #   certificateName: ${self:custom.baseDomain}
+  #   createRoute53Record: true
+  #   endpointType: regional
+  #   apiType: http
+  #   autoDomain: true
+  prune:
+    automatic: true
+    number: 20
+  webpack:
+    webpackConfig: webpack.config.js
+    packager: yarn
+    includeModules:
+      packagePath: package.json
+      forceExclude:
+        - aws-sdk
+  s3Sync:
+    - bucketName: ${self:service}-${self:custom.stage}
+      localDir: src/infrastructure/storage/defaults/
+      acl: public-read
+
+package:
+  individually: true
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  timeout: 25
+  region: ${self:custom.region}
+  stage: ${self:custom.stage}
+  environment:
+    SERVICE: ${self:service}
+    STAGE: ${self:custom.stage}
+    REGION: ${self:custom.region}
+    NODE_ENV: ${self:custom.stage}
+    TABLE_NAME: ${self:service}-${self:custom.stage}
+    S3_BUCKET: ${self:service}-${self:custom.stage}
+    CLOUDFRONT_DOMAIN: !GetAtt UserMediaDistribution.DomainName
+    USER_POOL_ID:
+      Ref: CognitoUserPool
+    SENTRY_DSN: xxx # TODO
+  httpApi:
+    payload: "2.0"
+    cors: true
+    authorizers:
+      WebAuthorizer:
+        identitySource: $request.header.Authorization
+        issuerUrl:
+          Fn::Join:
+            - ""
+            - - "https://cognito-idp."
+              - "${opt:region, self:provider.region}"
+              - ".amazonaws.com/"
+              - Ref: CognitoUserPool
+        audience:
+          Ref: CognitoUserPoolClient
+  lambdaHashingVersion: 20201221
+  iam:
+    role:
+      statements: # TODO: define IAMs per function
+        - Effect: Allow
+          Action:
+            - dynamodb:*
+          Resource:
+            - "*"
+        - Effect: Allow
+          Action:
+            - cognito-idp:*
+          Resource:
+            - "*"
+        - Effect: Allow
+          Action:
+            - events:PutEvents
+          Resource:
+            - "*"
+
+functions:
+  - ${file(./src/functions/users/get/function.yml)}
+  - ${file(./src/functions/users/update/function.yml)}
+  - ${file(./src/functions/preferences/get/function.yml)}
+  - ${file(./src/functions/preferences/update/function.yml)}
+  - ${file(./src/functions/media/upload/function.yml)}
+
+resources:
+  - ${file(./src/infrastructure/database/table.yml)}
+  - ${file(./src/infrastructure/storage/bucket.yml)}
+  - ${file(./src/infrastructure/auth/auth-role.yml)}
+  - ${file(./src/infrastructure/auth/user-pool.yml)}
+  - ${file(./src/infrastructure/auth/identity-pool.yml)}

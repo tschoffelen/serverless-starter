@@ -1,0 +1,44 @@
+{
+  "name": "serverless-starter",
+  "version": "1.0.0",
+  "license": "proprietary",
+  "private": true,
+  "scripts": {
+    "start": "AUTHORIZER=$(cat tests/local-auth.txt | xargs) serverless offline start --noAuth",
+    "prepare": "husky install && husky add .husky/pre-commit 'yarn lint-staged'",
+    "deploy": "serverless deploy",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@flexible-agency/serverless-middleware": "^1.0.5",
+    "aws-sdk": "^2.786.0",
+    "dynamodb-toolbox": "^0.3.3",
+    "joi": "^17.4.0",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.13.5",
+    "babel-jest": "^26.6.3",
+    "husky": "^6.0.0",
+    "jest": "^26.6.1",
+    "jest-junit": "^12.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.1",
+    "serverless": "^2.43.0",
+    "serverless-domain-manager": "^5.1.0",
+    "serverless-offline": "^7.0.0",
+    "serverless-prune-plugin": "^1.4.1",
+    "serverless-s3-sync": "^1.17.1",
+    "serverless-webpack": "^5.3.5",
+    "webpack": "^5.4.0"
+  },
+  "jest": {
+    "setupFiles": [
+      "./tests/set-env.js"
+    ]
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
