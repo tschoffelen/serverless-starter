@@ -3,17 +3,17 @@ service: serverless-starter
 plugins:
   - serverless-offline
   - serverless-prune-plugin
-  # - serverless-domain-manager
   - serverless-webpack
   - serverless-s3-sync
+  # - serverless-domain-manager
 
 custom:
   stage: ${opt:stage, 'local'}
   region: ${opt:region, 'eu-west-1'}
-  baseDomain: my-app.com
-  domain:
-    production: api.${self:custom.baseDomain}
-    default: api-${self:custom.stage}.${self:custom.baseDomain}
+  # baseDomain: my-app.com
+  # domain:
+  #   production: api.${self:custom.baseDomain}
+  #   default: api-${self:custom.stage}.${self:custom.baseDomain}
   # customDomain:
   #   domainName: ${self:custom.domain.${self:custom.stage}, self:custom.domain.default}
   #   stage: ${self:custom.stage}
