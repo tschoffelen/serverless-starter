@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@flexible-agency/serverless-middleware": "^1.0.5",
-    "aws-sdk": "^2.934.0",
+    "aws-sdk": "^2.935.0",
     "dynamodb-toolbox": "^0.3.3",
     "joi": "^17.4.0",
     "uuid": "^8.3.1"
