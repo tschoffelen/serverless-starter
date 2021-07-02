@@ -20,14 +20,7 @@ export const app = async ({ userId }, { User, currentUser }) => {
     throw new Error("User not found.");
   }
 
-  const publicWhitelist = [
-    "id",
-    "displayName",
-    "name",
-    "avatar",
-    "followerCount",
-    "followingCount",
-  ];
+  const publicWhitelist = ["id", "displayName", "name", "avatar", "bio"];
   if (result.id === currentUser.id) {
     return result;
   }
