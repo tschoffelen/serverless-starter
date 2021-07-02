@@ -22,15 +22,15 @@ export const app = async (
   const safeType = sanitizeFilename(type);
   const key = `${safeType}/${currentUser.id}/${uuid()}/${safeFilename}`;
 
-  const uploadURL = getSignedUrl(key, contentType, {
+  const uploadUrl = getSignedUrl(key, contentType, {
     "x-upload-user": currentUser.id,
     "x-upload-category": safeType,
     "x-upload-filename": filename,
   });
 
   return {
-    uploadURL,
-    publicURL: `https://${process.env.CLOUDFRONT_DOMAIN}/${key}`,
+    uploadUrl,
+    publicUrl: `https://${process.env.CLOUDFRONT_DOMAIN}/${key}`,
   };
 };
 

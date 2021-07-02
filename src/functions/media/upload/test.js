@@ -20,9 +20,9 @@ describe("media-upload", () => {
     const result = await app(event, dependencies);
 
     expect(result).toEqual({
-      publicURL:
+      publicUrl:
         "https://test.com/custom-image/test123/133a1a65-dc63-48e5-9afd-40d17b228874/image.jpg",
-      uploadURL: "https://example.com/",
+      uploadUrl: "https://example.com/",
     });
     expect(getSignedUrl).toBeCalledTimes(1);
     expect(getSignedUrl).toBeCalledWith(
