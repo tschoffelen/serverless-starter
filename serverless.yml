@@ -35,6 +35,7 @@ custom:
   s3Sync:
     - bucketName: ${self:service}-${self:custom.stage}
       localDir: src/infrastructure/storage/defaults/
+      deleteRemoved: false
       acl: public-read
 
 package:
