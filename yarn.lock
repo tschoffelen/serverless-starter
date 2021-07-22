@@ -917,14 +917,13 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@flexible-agency/serverless-middleware@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@flexible-agency/serverless-middleware/-/serverless-middleware-1.1.0.tgz#de16a64ad3375859f408f0b309d2a867fc4fcd8f"
-  integrity sha512-EhOaWbkm4mf9T+DMnDB+a11rApo4Vx1dwxqqcUjfAQeqctbaf6HddwYIavr/Rr/JHfJVv0+TcHvtTCpQEFRyRw==
+"@flexible-agency/serverless-middleware@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@flexible-agency/serverless-middleware/-/serverless-middleware-1.1.2.tgz#41d88ceff3a1d400e142bad8945651cec3160da2"
+  integrity sha512-+zxa4IFVTDk0i3mQS0DoqS+SqYlHNyMwObQgzpWZ9GGBIKLJQDznailVWuN54kKXt4ocQg5qUAnehsU7nSry6g==
   dependencies:
     "@laconia/core" "^1.11.0"
     "@laconia/event" "^1.11.0"
-    "@laconia/middleware-serverless-plugin-warmup" "^1.11.0"
     "@sentry/serverless" "^6.7.1"
     "@sentry/tracing" "^6.7.1"
 
@@ -1438,13 +1437,6 @@
   dependencies:
     "@laconia/core" "^1.11.0"
     "@types/aws-lambda" "~8.10.31"
-
-"@laconia/middleware-serverless-plugin-warmup@^1.11.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@laconia/middleware-serverless-plugin-warmup/-/middleware-serverless-plugin-warmup-1.11.0.tgz#2b5646bce2587fd28918c92441eab11cb75d580e"
-  integrity sha512-LCrz6eMejmfXBjJsuR8svVCWr80u9y9vHh+3GEIe+MEp3s95HqvCEowbhY9zs5tC2ioEDIVNVol3q9jbIRbpkQ==
-  dependencies:
-    "@types/aws-lambda" "8.10.61"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
