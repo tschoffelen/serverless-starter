@@ -23,6 +23,11 @@ custom:
   #   endpointType: regional
   #   apiType: http
   #   autoDomain: true
+  warmup:
+    default:
+      enabled: true
+      events:
+        - schedule: "cron(0/12 8-17 ? * MON-FRI *)"
   prune:
     automatic: true
     number: 20
