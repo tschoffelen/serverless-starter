@@ -5,6 +5,7 @@ plugins:
   - serverless-prune-plugin
   - serverless-webpack
   - serverless-s3-sync
+  - serverless-plugin-warmup
   # - serverless-domain-manager
 
 custom:

@@ -917,13 +917,14 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@flexible-agency/serverless-middleware@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@flexible-agency/serverless-middleware/-/serverless-middleware-1.0.5.tgz#995de8bd0d99d05ed080a5da7e8e68397582aef3"
-  integrity sha512-AlEAIyFdeL293CjRzXEyDqnGAtuiR8zGWds7rpVcWKHbyoLQSRPsya8aSz4R920ENF3bkMxoYihGHGFw0h1oiQ==
+"@flexible-agency/serverless-middleware@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@flexible-agency/serverless-middleware/-/serverless-middleware-1.1.0.tgz#de16a64ad3375859f408f0b309d2a867fc4fcd8f"
+  integrity sha512-EhOaWbkm4mf9T+DMnDB+a11rApo4Vx1dwxqqcUjfAQeqctbaf6HddwYIavr/Rr/JHfJVv0+TcHvtTCpQEFRyRw==
   dependencies:
     "@laconia/core" "^1.11.0"
     "@laconia/event" "^1.11.0"
+    "@laconia/middleware-serverless-plugin-warmup" "^1.11.0"
     "@sentry/serverless" "^6.7.1"
     "@sentry/tracing" "^6.7.1"
 
@@ -1437,6 +1438,13 @@
   dependencies:
     "@laconia/core" "^1.11.0"
     "@types/aws-lambda" "~8.10.31"
+
+"@laconia/middleware-serverless-plugin-warmup@^1.11.0":
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@laconia/middleware-serverless-plugin-warmup/-/middleware-serverless-plugin-warmup-1.11.0.tgz#2b5646bce2587fd28918c92441eab11cb75d580e"
+  integrity sha512-LCrz6eMejmfXBjJsuR8svVCWr80u9y9vHh+3GEIe+MEp3s95HqvCEowbhY9zs5tC2ioEDIVNVol3q9jbIRbpkQ==
+  dependencies:
+    "@types/aws-lambda" "8.10.61"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -7485,6 +7493,11 @@ serverless-offline@^7.0.0:
     update-notifier "^5.0.1"
     velocityjs "^2.0.3"
     ws "^7.4.2"
+
+serverless-plugin-warmup@^5.3.1:
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/serverless-plugin-warmup/-/serverless-plugin-warmup-5.3.1.tgz#cc8ca43452c5468a79a7b5447c84267035fa8d1e"
+  integrity sha512-+nY6VCTLf/VjwkwAudtCXE/neaYSKy+9NmnYTSL0y8ZGfKB6u9Hrh9J2vqYEcam6eQFnCAEsch9iTs/dbU2vGg==
 
 serverless-prune-plugin@^1.4.1:
   version "1.5.0"
