@@ -115,7 +115,7 @@ yarn deploy --stage production
 ```
 
 
-
+<!-- End of readme template -->
 
 <br /><br />
 
