@@ -113,3 +113,20 @@ possible to override this to manually deploy to production:
 ```shell
 yarn deploy --stage production
 ```
+
+
+<!-- End of readme template -->
+
+<br /><br />
+
+---
+
+<div align="center">
+	<b>
+		<a href="https://schof.co/consulting/?utm_source=flexible-agency/serverless-starter">Get professional support for this package →</a>
+	</b>
+	<br>
+	<sub>
+		Custom consulting sessions availabe for implementation support and feature development.
+	</sub>
+</div>
