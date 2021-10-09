@@ -12,8 +12,6 @@ jobs:
         uses: actions/setup-node@v2.1.5
         with:
           node-version: 14
-      - name: Install AWS CLI
-        uses: chrislennon/action-aws-cli@1.1
       - name: Install dependencies
         run: yarn
       - name: Run tests
