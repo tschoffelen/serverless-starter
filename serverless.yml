@@ -1,9 +1,9 @@
 service: serverless-starter
 
 plugins:
+  - serverless-esbuild
   - serverless-offline
   - serverless-prune-plugin
-  - serverless-webpack
   - serverless-s3-sync
   - serverless-plugin-warmup
   # - serverless-domain-manager
@@ -31,13 +31,8 @@ custom:
   prune:
     automatic: true
     number: 20
-  webpack:
-    webpackConfig: webpack.config.js
+  esbuild:
     packager: yarn
-    includeModules:
-      packagePath: package.json
-      forceExclude:
-        - aws-sdk
   s3Sync:
     - bucketName: ${self:service}-${self:custom.stage}
       localDir: src/infrastructure/storage/defaults/
@@ -63,7 +58,6 @@ provider:
     CLOUDFRONT_DOMAIN: !GetAtt UserMediaDistribution.DomainName
     USER_POOL_ID:
       Ref: CognitoUserPool
-    SENTRY_DSN: xxx # TODO
   httpApi:
     payload: "2.0"
     cors: true

@@ -29,12 +29,10 @@ Install dependencies:
 yarn
 ```
 
-### 3. Optional extensions
+### 3. Custom domain (optional)
 
-- **Custom domain**: uncomment the `serverless-domain-manager` plugin line and `custom.customDomain` lines
-  in `serverless.yml`, and set the correct `custom.baseDomain` to set up a custom domain for your API.
-- **Sentry**: you can add Sentry error tracking by setting a property called `SENTRY_DSN` within `provider.environment`
-  in the `serverless.yml` file. Note that Sentry will only be active in production.
+Uncomment the `serverless-domain-manager` plugin line and `custom.customDomain` lines in `serverless.yml`,
+and set the correct `custom.baseDomain` to set up a custom domain for your API.
 
 ---
 
@@ -113,7 +111,6 @@ possible to override this to manually deploy to production:
 ```shell
 yarn deploy --stage production
 ```
-
 
 <!-- End of readme template -->
 

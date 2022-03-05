@@ -18,7 +18,7 @@ jobs:
         run: yarn test
       - name: Deploy
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }} # change 'main' to your branch name
-        run: yarn deploy --stage production # OR, if using custom domain: yarn serverless create_domain && yarn deploy --stage production
+        run: yarn deploy --verbose --stage production # OR, if using custom domain: yarn serverless create_domain && yarn deploy --verbose --stage production
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
