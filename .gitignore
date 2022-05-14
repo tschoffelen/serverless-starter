@@ -1,4 +1,4 @@
 node_modules
 .serverless
-.webpack
+.esbuild
 .husky
