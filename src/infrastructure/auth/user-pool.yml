@@ -3,7 +3,7 @@ Resources:
     Type: AWS::Cognito::UserPool
     DeletionPolicy: Retain
     Properties:
-      UserPoolName: ${self:service}-${self:custom.stage}-user-pool
+      UserPoolName: ${self:service}-${sls:stage}-user-pool
       UsernameAttributes:
         - email
       AutoVerifiedAttributes:
@@ -31,7 +31,7 @@ Resources:
   CognitoUserPoolClient:
     Type: AWS::Cognito::UserPoolClient
     Properties:
-      ClientName: ${self:service}-${self:custom.stage}-user-pool-client
+      ClientName: ${self:service}-${sls:stage}-user-pool-client
       UserPoolId:
         Ref: CognitoUserPool
       ExplicitAuthFlows:
@@ -61,6 +61,6 @@ Resources:
   CognitoUserPoolDomain:
     Type: AWS::Cognito::UserPoolDomain
     Properties:
-      Domain: ${self:service}-${self:custom.stage}
+      Domain: ${self:service}-${sls:stage}
       UserPoolId:
         Ref: CognitoUserPool

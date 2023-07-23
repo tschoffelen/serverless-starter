@@ -7,15 +7,13 @@ plugins:
   # - serverless-domain-manager
 
 custom:
-  stage: ${opt:stage, 'local'}
-  region: ${opt:region, 'eu-west-1'}
   # baseDomain: my-app.com
   # domain:
   #   production: api.${self:custom.baseDomain}
-  #   default: api-${self:custom.stage}.${self:custom.baseDomain}
+  #   default: api-${sls:stage}.${self:custom.baseDomain}
   # customDomain:
-  #   domainName: ${self:custom.domain.${self:custom.stage}, self:custom.domain.default}
-  #   stage: ${self:custom.stage}
+  #   domainName: ${self:custom.domain.${sls:stage}, self:custom.domain.default}
+  #   stage: ${sls:stage}
   #   certificateName: ${self:custom.baseDomain}
   #   createRoute53Record: true
   #   endpointType: regional
@@ -24,7 +22,7 @@ custom:
   esbuild:
     packager: yarn
   s3Sync:
-    - bucketName: ${self:service}-${self:custom.stage}
+    - bucketName: ${self:service}-${sls:stage}
       localDir: src/infrastructure/storage/defaults/
       deleteRemoved: false
       acl: public-read
@@ -36,17 +34,15 @@ provider:
   name: aws
   runtime: nodejs16.x
   timeout: 25
-  region: ${self:custom.region}
-  stage: ${self:custom.stage}
+  region: eu-west-1
   deploymentMethod: direct
   versionFunctions: false
   environment:
     SERVICE: ${self:service}
-    STAGE: ${self:custom.stage}
-    REGION: ${self:custom.region}
-    NODE_ENV: ${self:custom.stage}
-    TABLE_NAME: ${self:service}-${self:custom.stage}
-    S3_BUCKET: ${self:service}-${self:custom.stage}
+    STAGE: ${sls:stage}
+    NODE_ENV: ${sls:stage}
+    TABLE_NAME: ${self:service}-${sls:stage}
+    S3_BUCKET: ${self:service}-${sls:stage}
     CLOUDFRONT_DOMAIN: !GetAtt UserMediaDistribution.DomainName
     USER_POOL_ID:
       Ref: CognitoUserPool
