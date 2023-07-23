@@ -34,7 +34,7 @@ package:
 
 provider:
   name: aws
-  runtime: nodejs14.x
+  runtime: nodejs16.x
   timeout: 25
   region: ${self:custom.region}
   stage: ${self:custom.stage}
