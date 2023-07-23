@@ -3,9 +3,7 @@ service: serverless-starter
 plugins:
   - serverless-esbuild
   - serverless-offline
-  - serverless-prune-plugin
   - serverless-s3-sync
-  - serverless-plugin-warmup
   # - serverless-domain-manager
 
 custom:
@@ -23,14 +21,6 @@ custom:
   #   endpointType: regional
   #   apiType: http
   #   autoDomain: true
-  warmup:
-    default:
-      enabled: production
-      events:
-        - schedule: "cron(0/12 8-17 ? * MON-FRI *)"
-  prune:
-    automatic: true
-    number: 20
   esbuild:
     packager: yarn
   s3Sync:

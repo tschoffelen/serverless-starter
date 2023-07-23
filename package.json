@@ -30,8 +30,6 @@
     "serverless-domain-manager": "^6.0.2",
     "serverless-esbuild": "^1.25.0",
     "serverless-offline": "^8.5.0",
-    "serverless-plugin-warmup": "^7.1.0",
-    "serverless-prune-plugin": "^2.0.1",
     "serverless-s3-sync": "^3.0.0"
   },
   "jest": {
