@@ -38,6 +38,8 @@ provider:
   timeout: 25
   region: ${self:custom.region}
   stage: ${self:custom.stage}
+  deploymentMethod: direct
+  versionFunctions: false
   environment:
     SERVICE: ${self:service}
     STAGE: ${self:custom.stage}
