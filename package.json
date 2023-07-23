@@ -7,7 +7,7 @@
     "start": "AUTHORIZER=$(cat tests/local-auth.txt | xargs) serverless offline start --noAuth",
     "prepare": "husky install && husky add .husky/pre-commit 'yarn lint-staged'",
     "deploy": "serverless deploy",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "@flexible-agency/serverless-middleware": "^1.3.0",
