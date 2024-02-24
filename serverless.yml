@@ -3,7 +3,6 @@ service: serverless-starter
 plugins:
   - serverless-esbuild
   - serverless-offline
-  - serverless-s3-sync
   # - serverless-domain-manager
 
 custom:
@@ -22,11 +21,6 @@ custom:
   esbuild:
     packager: yarn
     exclude: []
-  s3Sync:
-    - bucketName: ${self:service}-${sls:stage}
-      localDir: src/infrastructure/storage/defaults/
-      deleteRemoved: false
-      acl: public-read
 
 package:
   individually: true

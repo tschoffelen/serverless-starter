@@ -29,8 +29,7 @@
     "serverless": "^3.7.1",
     "serverless-domain-manager": "^6.0.2",
     "serverless-esbuild": "^1.25.0",
-    "serverless-offline": "^8.5.0",
-    "serverless-s3-sync": "^3.0.0"
+    "serverless-offline": "^8.5.0"
   },
   "jest": {
     "setupFiles": [

@@ -18,21 +18,6 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@auth0/s3@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@auth0/s3/-/s3-1.0.0.tgz#2f4cd16e04e583955fe594407918315bfa76a622"
-  integrity sha512-O8PTXJnA7n8ONBSwqlWa+aZ/vlOdZYnSCGQt25h87ALWNItY/Yij79TOnzIkMTJZ8aCpGXQPuIRziLmBliV++Q==
-  dependencies:
-    aws-sdk "^2.346.0"
-    fd-slicer "~1.0.0"
-    findit2 "~2.2.3"
-    graceful-fs "~4.1.4"
-    mime "^2.3.1"
-    mkdirp "~0.5.0"
-    pend "~1.2.0"
-    rimraf "~2.2.8"
-    streamsink "~1.2.0"
-
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.22.5":
   version "7.22.5"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.22.5.tgz#234d98e1551960604f1246e6475891a570ad5658"
@@ -2024,7 +2009,7 @@ available-typed-arrays@^1.0.5:
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
 
-aws-sdk@^2.1087.0, aws-sdk@^2.1136.0, aws-sdk@^2.1322.0, aws-sdk@^2.1404.0, aws-sdk@^2.346.0:
+aws-sdk@^2.1087.0, aws-sdk@^2.1136.0, aws-sdk@^2.1322.0, aws-sdk@^2.1404.0:
   version "2.1420.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1420.0.tgz#ae49a7b8e54fbcd72bfdd4a94473ccf25ca8c984"
   integrity sha512-BvGzkKGgOXNj9WAeazvOLu48sCbU52mKLGIY5AjBKX4EuY8APcKKvl1R54kdUoJDnMwv0HwQpGvrVvLTDdOv/A==
@@ -2175,7 +2160,7 @@ bl@^4.0.3, bl@^4.1.0:
     inherits "^2.0.4"
     readable-stream "^3.4.0"
 
-bluebird@^3.5.4, bluebird@^3.7.2:
+bluebird@^3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
   integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
@@ -3285,13 +3270,6 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "2.1.1"
 
-fd-slicer@~1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/fd-slicer/-/fd-slicer-1.0.1.tgz#8b5bcbd9ec327c5041bf9ab023fd6750f1177e65"
-  integrity sha512-MX1ZLPIuKED51hrI4++K+1B0VX87Cs4EkybD2q12Ysuf5p4vkmHqMvQJRlDwROqFr4D2Pzyit5wGQxf30grIcw==
-  dependencies:
-    pend "~1.2.0"
-
 fd-slicer@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/fd-slicer/-/fd-slicer-1.1.0.tgz#25c7c89cb1f9077f8891bbe61d8f390eae256f1e"
@@ -3376,11 +3354,6 @@ find-up@^4.0.0, find-up@^4.1.0:
   dependencies:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
-
-findit2@~2.2.3:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/findit2/-/findit2-2.2.3.tgz#58a466697df8a6205cdfdbf395536b8bd777a5f6"
-  integrity sha512-lg/Moejf4qXovVutL0Lz4IsaPoNYMuxt4PA0nGqFxnJ1CTTGGlEO2wKgoDpwknhvZ8k4Q2F+eesgkLbG2Mxfog==
 
 flat@^5.0.2:
   version "5.0.2"
@@ -3619,11 +3592,6 @@ graceful-fs@^4.1.10, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.11
   version "4.2.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.11.tgz#4183e4e8bf08bb6e05bbb2f7d2e0c8f712ca40e3"
   integrity sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==
-
-graceful-fs@~4.1.4:
-  version "4.1.15"
-  resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.15.tgz#ffb703e1066e8a0eeaa4c8b80ba9253eeefbfb00"
-  integrity sha512-6uHUhOPEBgQ24HM+r6b/QwWfZq+yiFcipKFrOFiBEnWdy5sdzYoi+pJeQaPI5qOLRFqWmAXUPQNsielzdLoecA==
 
 graphlib@^2.1.8:
   version "2.1.8"
@@ -4947,7 +4915,7 @@ mime-types@^2.1.12:
   dependencies:
     mime-db "1.52.0"
 
-mime@2.6.0, mime@^2.3.1, mime@^2.4.4:
+mime@2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/mime/-/mime-2.6.0.tgz#a2a682a95cd4d0cb1d6257e28f83da7e35800367"
   integrity sha512-USPkMeET31rOMiarsBNIHZKLGgvKc/LrjofAnBlOttf5ajRvqiRA8QsenbcooctK6d6Ts6aqZXBA+XbkKthiQg==
@@ -4986,11 +4954,6 @@ minimatch@^5.1.0:
   dependencies:
     brace-expansion "^2.0.1"
 
-minimist@^1.2.6:
-  version "1.2.8"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.8.tgz#c1a464e7693302e082a075cee0c057741ac4772c"
-  integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
-
 minipass@^3.0.0:
   version "3.3.6"
   resolved "https://registry.yarnpkg.com/minipass/-/minipass-3.3.6.tgz#7bba384db3a1520d18c9c0e5251c3444e95dd94a"
@@ -5015,13 +4978,6 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
-
-mkdirp@~0.5.0:
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.6.tgz#7def03d2432dcae4ba1d611445c48396062255f6"
-  integrity sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==
-  dependencies:
-    minimist "^1.2.6"
 
 ms@2.1.2:
   version "2.1.2"
@@ -5711,11 +5667,6 @@ rimraf@^3.0.0:
   dependencies:
     glob "^7.1.3"
 
-rimraf@~2.2.8:
-  version "2.2.8"
-  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
-  integrity sha512-R5KMKHnPAQaZMqLOsyuyUmcIjSeDm+73eoqQpaXA7AZ22BL+6C+1mcUscgOsNd8WVlJuvlgAPsegcx7pjlV0Dg==
-
 run-async@^2.4.0:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/run-async/-/run-async-2.4.1.tgz#8440eccf99ea3e70bd409d49aab88e10c189a455"
@@ -5858,16 +5809,6 @@ serverless-offline@^8.5.0:
     semver "^7.3.7"
     velocityjs "^2.0.6"
     ws "^7.5.7"
-
-serverless-s3-sync@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/serverless-s3-sync/-/serverless-s3-sync-3.1.0.tgz#58a669d928303a2e69ec121a951ad3a8f075b754"
-  integrity sha512-qgbPQkq8i70tBB6lUHUpdvitGJAHjq+m5xIg8mrjiCv412+5LEXnDi5P5AegJ54CEGWmmZaxSA9lvYPrAnfOiA==
-  dependencies:
-    "@auth0/s3" "^1.0.0"
-    bluebird "^3.5.4"
-    mime "^2.4.4"
-    minimatch "^3.0.4"
 
 serverless@^3.7.1:
   version "3.33.0"
@@ -6087,11 +6028,6 @@ stream-promise@^3.2.0:
     "2-thenable" "^1.0.0"
     es5-ext "^0.10.49"
     is-stream "^1.1.0"
-
-streamsink@~1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/streamsink/-/streamsink-1.2.0.tgz#efafee9f1e22d3591ed7de3dcaa95c3f5e79f73c"
-  integrity sha512-MJ440L2+j2vmc1v8Z/BkMx3X+HsJ++V7mgDROboQKxqCLZdNbu+AeSwQbayXw3LPHVAMxw+h7ZJUnyFYl/zp2g==
 
 string-argv@0.3.1:
   version "0.3.1"
