@@ -1,7 +1,17 @@
-import AWS from "aws-sdk";
 import { Table } from "dynamodb-toolbox";
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
 
-export const dynamo = new AWS.DynamoDB.DocumentClient();
+const translateConfig = {
+  marshallOptions: {
+    convertEmptyValues: false,
+  },
+};
+
+export const dynamo = DynamoDBDocumentClient.from(
+  new DynamoDBClient(),
+  translateConfig,
+);
 
 export const table = new Table({
   name: process.env.TABLE_NAME,

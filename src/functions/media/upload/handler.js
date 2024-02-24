@@ -8,21 +8,22 @@ const dependencies = () => ({
   uuid,
 });
 
+const defaultParams = {
+  type: "avatar",
+  filename: "image.jpg",
+  contentType: "image/jpeg",
+};
+
 export const app = async (
-  {
-    query: {
-      type = "avatar",
-      filename = "image.jpg",
-      contentType = "image/jpeg",
-    },
-  },
-  { currentUser, getSignedUrl, uuid }
+  { query = {} },
+  { currentUser, getSignedUrl, uuid },
 ) => {
+  const { filename, type, contentType } = { ...defaultParams, ...query };
   const safeFilename = sanitizeFilename(filename);
   const safeType = sanitizeFilename(type);
   const key = `${safeType}/${currentUser.id}/${uuid()}/${safeFilename}`;
 
-  const uploadUrl = getSignedUrl(key, contentType, {
+  const uploadUrl = await getSignedUrl(key, contentType, {
     "x-upload-user": currentUser.id,
     "x-upload-category": safeType,
     "x-upload-filename": filename,

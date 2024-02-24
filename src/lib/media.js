@@ -1,6 +1,6 @@
-import AWS from "aws-sdk";
-
-export const s3 = new AWS.S3({ useAccelerateEndpoint: true });
+import { getSignedUrl as s3SignedUrl } from "@aws-sdk/s3-request-presigner";
+import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
+const client = new S3Client({ useAccelerateEndpoint: true });
 
 const illegalRe = /[\/?<>\\:*|"]/g;
 const controlRe = /[\x00-\x1f\x80-\x9f]/g;
@@ -17,13 +17,14 @@ export const sanitizeFilename = (input) =>
     .replace(windowsTrailingRe, "-")
     .replace(/ /g, "-");
 
-export function getSignedUrl(key, contentType, metadata = {}) {
-  return s3.getSignedUrl("putObject", {
+export async function getSignedUrl(key, contentType, metadata = {}) {
+  const command = new PutObjectCommand({
     Key: key,
     Bucket: process.env.S3_BUCKET,
-    Expires: 3600,
     ContentType: contentType,
     ACL: "public-read",
     Metadata: metadata,
   });
+
+  return s3SignedUrl(client, command, { expiresIn: 3600 });
 }

@@ -1,6 +1,6 @@
-import AWS from "aws-sdk";
+import { EventBridge } from "@aws-sdk/client-eventbridge";
 
-const bridge = new AWS.EventBridge();
+const bridge = new EventBridge();
 
 const createEventEntry = (type, data = {}) => ({
   Source: process.env.SERVICE,
@@ -9,8 +9,4 @@ const createEventEntry = (type, data = {}) => ({
 });
 
 export const sendEvent = async (type, data = {}) =>
-  bridge
-    .putEvents({
-      Entries: [createEventEntry(type, data)],
-    })
-    .promise();
+  bridge.putEvents({ Entries: [createEventEntry(type, data)] });
