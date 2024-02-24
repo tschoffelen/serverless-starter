@@ -19,7 +19,6 @@ custom:
   #   apiType: http
   #   autoDomain: true
   esbuild:
-    packager: yarn
     exclude: []
 
 package:
