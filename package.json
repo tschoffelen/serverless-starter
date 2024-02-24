@@ -24,6 +24,7 @@
   "devDependencies": {
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
+    "@types/jest": "^29.5.12",
     "babel-jest": "^29.7.0",
     "esbuild": "^0.20.1",
     "husky": "^9.0.11",
