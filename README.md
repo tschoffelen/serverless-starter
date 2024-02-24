@@ -1,4 +1,4 @@
-# Serverless API boilerplate
+# Boilerplate for Serverless APIs
 
 A quick way to get started building a serverless API.
 
