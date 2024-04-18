@@ -1,6 +1,7 @@
 Resources:
   UserMediaBucket:
     Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
     Properties:
       BucketName: ${self:service}-${sls:stage}
       AccelerateConfiguration:
@@ -8,6 +9,9 @@ Resources:
       WebsiteConfiguration:
         IndexDocument: default.png
         ErrorDocument: default.png
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: BucketOwnerPreferred
       CorsConfiguration:
         CorsRules:
           - AllowedOrigins:
