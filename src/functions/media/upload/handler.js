@@ -1,4 +1,4 @@
-import { middleware, auth } from "@flexible-agency/serverless-middleware";
+import { middleware, auth } from "@includable/serverless-middleware";
 import { v4 as uuid } from "uuid";
 
 import { getSignedUrl, sanitizeFilename } from "../../../lib/media";

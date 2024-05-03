@@ -16,7 +16,7 @@
     "@aws-sdk/client-s3": "^3.521.0",
     "@aws-sdk/lib-dynamodb": "^3.521.0",
     "@aws-sdk/s3-request-presigner": "^3.521.0",
-    "@flexible-agency/serverless-middleware": "^1.5.1",
+    "@includable/serverless-middleware": "^2.1.0",
     "dynamodb-toolbox": "^0.9.2",
     "joi": "^17.12.2",
     "uuid": "^9.0.1"

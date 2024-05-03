@@ -120,7 +120,7 @@ yarn deploy --stage production
 
 <div align="center">
 	<b>
-		<a href="https://schof.co/consulting/?utm_source=flexible-agency/serverless-starter">Get professional support for this package →</a>
+		<a href="https://schof.co/consulting/?utm_source=includable/serverless-starter">Get professional support for this package →</a>
 	</b>
 	<br>
 	<sub>

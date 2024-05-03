@@ -1,4 +1,4 @@
-import { middleware, auth } from "@flexible-agency/serverless-middleware";
+import { middleware, auth } from "@includable/serverless-middleware";
 import Joi from "joi";
 
 import User from "../../../lib/entities/User";

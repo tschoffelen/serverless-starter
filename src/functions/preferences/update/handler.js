@@ -1,5 +1,5 @@
 import Joi from "joi";
-import { middleware, auth } from "@flexible-agency/serverless-middleware";
+import { middleware, auth } from "@includable/serverless-middleware";
 
 import User from "../../../lib/entities/User";
 
