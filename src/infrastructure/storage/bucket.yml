@@ -44,7 +44,7 @@ Resources:
         Enabled: true
         Origins:
           - Id: UserMediaBucket
-            DomainName: ${self:service}-${sls:stage}.s3-website-${self:provider.region}.amazonaws.com
+            DomainName: ${self:service}-${sls:stage}.s3-website.${self:provider.region}.amazonaws.com
             CustomOriginConfig:
               HTTPPort: 80
               HTTPSPort: 443
